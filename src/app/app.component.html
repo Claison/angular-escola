@@ -1,4 +1,4 @@
-<h1>Disciplinas      <button (click)="selecionar(disciplina)">Cadastrar</button></h1>
+<h1>Disciplinas <button (click)="selecionar(disciplina)">Cadastrar</button></h1>
   <table>
       
       <tr>
@@ -9,12 +9,27 @@
       <tr *ngFor="let disciplina of disciplinas"> 
           <td >{{disciplina.codigo}}</td>
           <td>{{disciplina.nome}}</td> 
-          <td><button (click)="selecionar(disciplina)">Detalhes</button></td>
+          <td><button (click)="salvar(disciplina)">Editar</button>   <button (click)="excluir(disciplina)">Excluir</button></td>
         </tr>
   </table>
-  <div *ngIf= "selecionado != null">
+  <!-- <div *ngIf= "selecionado != null">
       <h1>Disciplina</h1>
       <p > {{selecionado.nome}}</p>
       <p ><strong>Professor:</strong> {{selecionado.professor.nome}}</p>
       <p ><strong>Descrição:</strong> {{selecionado.descricao}}</p>
-  </div>
+  </div> -->
+  
+  <!-- <div *ngIf= "selecionado == null"> -->
+  <!-- <h2>Cadastrar</h2>
+  <p>Use este formulário para cadastrar uma disciplina.</p>
+  <form #cadastro="ngForm" (submit)="salvar()">
+    <div>
+        <label for="nome">Nome</label><br>
+        <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
+    </div>
+    <div>
+        <label for="descricao">Descrição</label><br>
+        <textarea id="descricao" name="descricao" [(ngModel)]="descricao"cols="70" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid">Salvar</button>
+  </form> -->

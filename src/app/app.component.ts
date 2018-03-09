@@ -59,12 +59,22 @@ export class AppComponent {
       'expliquem e intervenham no mundo em que vivem.',new Professor('Renan'))
   ];
   selecionar(disciplina) {
-    this.selecionado = disciplina;
+    if(this.selecionado == disciplina){
+      this.selecionado=null
+    }
+    else{this.selecionado=disciplina}
   }
   salvar() {
     const d = new Disciplina(this.codigo,this.nome, this.descricao);
     this.disciplinas.push(d);
     this.nome = null;
     this.descricao = null;
+  }
+  excluir(disciplina) {
+    if (confirm('Tem certeza que deseja excluir a disciplina "'
+        + disciplina.nome + '"?')) {
+      const i = this.disciplinas.indexOf(disciplina);
+      this.disciplinas.splice(i, 1);
+    }
   }
 }
