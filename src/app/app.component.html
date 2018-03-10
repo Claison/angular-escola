@@ -1,4 +1,11 @@
-<h1>Disciplinas <button (click)="cadastro=1">Cadastrar</button></h1>
+<div class="center">
+
+
+<h1>Disciplinas </h1>
+<button (click)="cadastro=1" id="novo">Nova</button>
+
+
+<hr>
   <table>
       <tr>
           <th>Código</th> 
@@ -13,8 +20,8 @@
   </table>
    
   <div *ngIf= "cadastro != null">
-  <h2>Cadastrar</h2>
-  <p>Use este formulário para cadastrar uma disciplina.</p>
+  <!-- <h2>Cadastrar</h2>
+  <p>Use este formulário para cadastrar uma disciplina.</p> -->
   <form #cadastro="ngForm" (submit)="salvar()"  >
     <div>
         <label for="codigo">Codigo</label><br>
@@ -31,4 +38,5 @@
     <button type="reset" (click)="cancelar()">Cancelar</button>
     <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid" >Salvar</button>
   </form>
+</div>
 </div>
