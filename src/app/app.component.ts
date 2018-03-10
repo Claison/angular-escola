@@ -9,6 +9,8 @@ import {Professor} from './professor.model';
 })
 export class AppComponent {
   selecionado = null;
+  cadastro=null;
+  editar=null;
   codigo= null;
   nome = null;
   descricao = null;
@@ -58,17 +60,42 @@ export class AppComponent {
       'Essas aprendizagens, entre outras, possibilitam que os alunos compreendam, ' +
       'expliquem e intervenham no mundo em que vivem.',new Professor('Renan'))
   ];
+  
   selecionar(disciplina) {
     if(this.selecionado == disciplina){
       this.selecionado=null
     }
     else{this.selecionado=disciplina}
   }
-  salvar() {
-    const d = new Disciplina(this.codigo,this.nome, this.descricao);
-    this.disciplinas.push(d);
+  cancelar() {
+    this.cadastro = null;
+    this.codigo=null;
     this.nome = null;
     this.descricao = null;
+    
+  }
+  salvar() {
+    if (this.editar) {
+      this.editar.codigo = this.codigo;
+      this.editar.nome = this.nome;
+      this.editar.descricao = this.descricao;
+      this.editar = null;
+    }else {
+    const d = new Disciplina(this.codigo,this.nome, this.descricao);
+    this.disciplinas.push(d);
+  }
+    
+    this.codigo=null;
+    this.nome = null;
+    this.descricao = null;
+    this.cadastro=null;
+  }
+  editor(disciplina) {
+    this.cadastro=1;
+    this.codigo=disciplina.codigo;
+    this.nome = disciplina.nome;
+    this.descricao = disciplina.descricao;
+    this.editar = disciplina;
   }
   excluir(disciplina) {
     if (confirm('Tem certeza que deseja excluir a disciplina "'
