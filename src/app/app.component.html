@@ -1,42 +1,47 @@
-<div class="center">
-
-
-<h1>Disciplinas </h1>
-<button (click)="cadastro=1" id="novo">Nova</button>
-
-
-<hr>
-  <table>
-      <tr>
-          <th>Código</th> 
-          <th>Nome</th>
-          <th>Detalhes</th>
-        </tr>
-      <tr *ngFor="let disciplina of disciplinas"> 
-          <td >{{disciplina.codigo}}</td>
-          <td>{{disciplina.nome}}</td> 
-          <td><button (click)="editor(disciplina)">Editar</button>   <button (click)="excluir(disciplina)">Excluir</button></td>
-        </tr>
-  </table>
-   
-  <div *ngIf= "cadastro != null">
-  <!-- <h2>Cadastrar</h2>
-  <p>Use este formulário para cadastrar uma disciplina.</p> -->
-  <form #cadastro="ngForm" (submit)="salvar()"  >
-    <div>
-        <label for="codigo">Codigo</label><br>
-        <input type="codigo" id="codigo" name="codigo" [(ngModel)]="codigo" required>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Disciplinas </h1>
+      </div>
+      <div class="col">
+        <button (click)="cadastro=1" id="novo">Nova</button>
+      </div>
     </div>
-    <div>
-        <label for="nome">Nome</label><br>
-        <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
-    </div>
-    <div>
-        <label for="descricao">Descrição</label><br>
-        <textarea id="descricao" name="descricao" [(ngModel)]="descricao"cols="70" rows="5"></textarea>
-    </div>
-    <button type="reset" (click)="cancelar()">Cancelar</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid" >Salvar</button>
-  </form>
-</div>
-</div>
+    <hr>
+        <table>
+            <tr>
+                <th>Código</th> 
+                <th>Nome</th>
+                <th>Detalhes</th>
+              </tr>
+            <tr *ngFor="let disciplina of disciplinas"> 
+                <td >{{disciplina.codigo}}</td>
+                <td>{{disciplina.nome}}</td> 
+                <td><button class="btn btn-primary"(click)="editor(disciplina)">Editar</button>   <button class="btn btn-danger" (click)="excluir(disciplina)">Excluir</button></td>
+              </tr>
+        </table>
+         
+        <div *ngIf= "cadastro != null">
+        <!-- <h2>Cadastrar</h2>
+        <p>Use este formulário para cadastrar uma disciplina.</p> -->
+        <form #cadastro="ngForm" (submit)="salvar()"  >
+          <div>
+              <label for="codigo">Codigo</label><br>
+              <input type="codigo" id="codigo" name="codigo" [(ngModel)]="codigo" required>
+          </div>
+          <div>
+              <label for="nome">Nome</label><br>
+              <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
+          </div>
+          <div>
+              <label for="descricao">Descrição</label><br>
+              <textarea id="descricao" name="descricao" [(ngModel)]="descricao"cols="70" rows="5"></textarea>
+          </div>
+          <button type="reset" class="btn btn-warning"(click)="cancelar()">Cancelar</button>
+          <button type="submit" class="btn btn-success" [disabled]="!cadastro.valid" >Salvar</button>
+        </form>
+      </div>
+
+  </div>
+
+  
