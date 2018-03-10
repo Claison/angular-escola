@@ -11,13 +11,7 @@
           <td><button (click)="editor(disciplina)">Editar</button>   <button (click)="excluir(disciplina)">Excluir</button></td>
         </tr>
   </table>
-   <div *ngIf= "selecionado != null">
-      <h1>Disciplina</h1>
-      <p > {{selecionado.nome}}</p>
-      <p ><strong>Professor:</strong> {{selecionado.professor.nome}}</p>
-      <p ><strong>Descrição:</strong> {{selecionado.descricao}}</p>
-  </div>
-  
+   
   <div *ngIf= "cadastro != null">
   <h2>Cadastrar</h2>
   <p>Use este formulário para cadastrar uma disciplina.</p>

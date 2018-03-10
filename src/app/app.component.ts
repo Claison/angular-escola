@@ -8,7 +8,6 @@ import {Professor} from './professor.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selecionado = null;
   cadastro=null;
   editar=null;
   codigo= null;
@@ -61,12 +60,6 @@ export class AppComponent {
       'expliquem e intervenham no mundo em que vivem.',new Professor('Renan'))
   ];
   
-  selecionar(disciplina) {
-    if(this.selecionado == disciplina){
-      this.selecionado=null
-    }
-    else{this.selecionado=disciplina}
-  }
   cancelar() {
     this.cadastro = null;
     this.codigo=null;
