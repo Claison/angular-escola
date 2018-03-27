@@ -3,7 +3,7 @@
       <div class="col">
         <h1>Disciplinas </h1>
       </div>
-      <div class="col">
+      <div>
         <button (click)="cadastro=1" id="novo">Nova</button>
       </div>
     </div>
@@ -22,26 +22,54 @@
         </table>
          
         <div *ngIf= "cadastro != null">
-        <!-- <h2>Cadastrar</h2>
-        <p>Use este formulário para cadastrar uma disciplina.</p> -->
         <form #cadastro="ngForm" (submit)="salvar()"  >
           <div>
               <label for="codigo">Codigo</label><br>
-              <input type="codigo" id="codigo" name="codigo" [(ngModel)]="codigo" required>
+              <input type="number" id="codigo" name="codigo" [(ngModel)]="codigo" required>
           </div>
           <div>
               <label for="nome">Nome</label><br>
               <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
           </div>
           <div>
+              <label><input type="radio" name="tipo" [(ngModel)]="tipo" value="primario">Primário</label>
+              <label><input type="radio" name="tipo" [(ngModel)]="tipo" value="secundario">Secundário</label>
+          </div>
+          
+          <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="ativa" value="" [(ngModel)]="ativa">Ativo
+                </label>
+              </div>
+            <div class="form-group">
+                <label for="periodo">Selecione o periodo:</label>
+                <select type="number" class="form-control" id="periodo" name="periodo" [(ngModel)]="periodo" required>
+                  <option value="">selecione um periodo</option>
+                  <option value="1">1º périodo</option>
+                  <option value="2">2º périodo</option>
+                  <option value="3">3º périodo</option>
+                  <option value="4">4º périodo</option>
+                  <option value="5">5º périodo</option>
+                  <option value="6">6º périodo</option>
+                  <option value="7">7º périodo</option>
+                  <option value="8">8º périodo</option>
+                </select>
+              </div>
+          <div>
               <label for="descricao">Descrição</label><br>
               <textarea id="descricao" name="descricao" [(ngModel)]="descricao"cols="70" rows="5"></textarea>
           </div>
+          <div class="form-group">
+            <label for="data">Data</label><br>
+            <input type="Date" id="data" name="data" class="form-control" [(ngModel)]="data" required>
+            </div>
           <button type="reset" class="btn btn-warning"(click)="cancelar()">Cancelar</button>
           <button type="submit" class="btn btn-success" [disabled]="!cadastro.valid" >Salvar</button>
+          
         </form>
       </div>
 
   </div>
+  {{periodo}}
 
   

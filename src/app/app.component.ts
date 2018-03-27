@@ -13,12 +13,16 @@ export class AppComponent {
   codigo= null;
   nome = null;
   descricao = null;
+  periodo="";
+  tipo="primario";
+  data=null;
+  ativa=false;
   disciplinas = [
         new Disciplina(1,'Língua Portuguesa', 'O objetivo norteador da BNCC de Língua Portuguesa ' +
       'é garantir a todos os alunos o acesso aos saberes linguísticos necessários para a ' +
       'participação social e o exercício da cidadania, pois é por meio da língua que o ser ' +
       'humano pensa, comunica-se, tem acesso à informação, expressa e defende pontos de ' +
-      'vista, partilha ou constrói visões de mundo e produz conhecimento.',new Professor('Claison')),
+      'vista, partilha ou constrói visões de mundo e produz conhecimento.',),
       
     new Disciplina(2,'Educação Física', 'A Educação Física é o componente curricular ' +
       'que tematiza as práticas corporais em suas diversas formas de codificação e ' +
@@ -26,7 +30,7 @@ export class AppComponent {
       'expressivas dos sujeitos e patrimônio cultural da humanidade. Nessa concepção, ' +
       'o movimento humano está sempre inserido no âmbito da cultura e não se limita a ' +
       'um deslocamento espaço-temporal de um segmento corporal ou de um corpo todo. ' +
-      'Logo, as práticas corporais são textos culturais passíveis de leitura e produção.',new Professor('Heitor')),
+      'Logo, as práticas corporais são textos culturais passíveis de leitura e produção.',),
     
     new Disciplina(3,'Inglês', 'Aprender a língua inglesa propicia a criação de novas ' +
       'formas de engajamento e participação dos alunos em um mundo social cada vez mais ' +
@@ -37,7 +41,7 @@ export class AppComponent {
       'nesse sentido, abre novos percursos de acesso, construção de conhecimentos e ' +
       'participação social. É esse caráter formativo que inscreve a aprendizagem de ' +
       'inglês em uma perspectiva de educação linguística, consciente e crítica, na ' +
-      'qual as dimensões pedagógicas e políticas são intrinsecamente ligadas.',new Professor('Dionnes')),
+      'qual as dimensões pedagógicas e políticas são intrinsecamente ligadas.',),
       
     new Disciplina(4,'Matemática', 'No Ensino Fundamental, essa área, por meio da ' +
       'articulação de seus diversos campos – Aritmética, Álgebra, Geometria, ' +
@@ -49,7 +53,7 @@ export class AppComponent {
       'resolver problemas, aplicando conceitos, procedimentos e resultados para ' +
       'obter soluções e interpretá-las segundo os contextos das situações. A dedução ' +
       'de algumas propriedades e a verificação de conjecturas, a partir de outras, ' +
-      'podem ser estimuladas, sobretudo ao final do Ensino Fundamental.',new Professor('Muriel')),
+      'podem ser estimuladas, sobretudo ao final do Ensino Fundamental.',),
       
     new Disciplina(5,'Ciências', 'Ao estudar Ciências, as pessoas aprendem a respeito ' +
       'de si mesmas, da diversidade e dos processos de evolução e manutenção da vida, ' +
@@ -57,7 +61,7 @@ export class AppComponent {
       'de energia –, do nosso planeta no Sistema Solar e no Universo e da aplicação ' +
       'dos conhecimentos científicos nas várias esferas da vida humana. ' +
       'Essas aprendizagens, entre outras, possibilitam que os alunos compreendam, ' +
-      'expliquem e intervenham no mundo em que vivem.',new Professor('Renan'))
+      'expliquem e intervenham no mundo em que vivem.',)
   ];
   
   cancelar() {
@@ -65,6 +69,8 @@ export class AppComponent {
     this.codigo=null;
     this.nome = null;
     this.descricao = null;
+    this.periodo="";
+    this.ativa=false;
     
   }
   salvar() {
@@ -72,9 +78,14 @@ export class AppComponent {
       this.editar.codigo = this.codigo;
       this.editar.nome = this.nome;
       this.editar.descricao = this.descricao;
+      this.editar.periodo=this.periodo;
+      this.editar.data=this.data;
+      this.editar.tipo=this.tipo;
+      this.editar.ativa=this.ativa;
       this.editar = null;
+      
     }else {
-    const d = new Disciplina(this.codigo,this.nome, this.descricao);
+    const d = new Disciplina(this.codigo, this.nome, this.descricao, this.periodo, this.tipo, this.data, this.ativa);
     this.disciplinas.push(d);
   }
     
@@ -82,6 +93,10 @@ export class AppComponent {
     this.nome = null;
     this.descricao = null;
     this.cadastro=null;
+    this.periodo="";
+    this.data=null;
+    this.tipo="primario";
+    this.ativa=false;
   }
   editor(disciplina) {
     this.cadastro=1;
@@ -89,12 +104,22 @@ export class AppComponent {
     this.nome = disciplina.nome;
     this.descricao = disciplina.descricao;
     this.editar = disciplina;
+    this.periodo=disciplina.periodo;
+    this.data=disciplina.data;
+    this.tipo=disciplina.tipo;
+    this.ativa=disciplina.ativa;
   }
   excluir(disciplina) {
     if (confirm('Tem certeza que deseja excluir a disciplina "'
         + disciplina.nome + '"?')) {
       const i = this.disciplinas.indexOf(disciplina);
       this.disciplinas.splice(i, 1);
+      this.cadastro = null;
+      this.codigo=null;
+      this.nome = null;
+      this.descricao = null;
+      this.periodo="";
+      this.ativa=false;
     }
   }
 }
