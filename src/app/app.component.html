@@ -4,32 +4,35 @@
         <h1>Disciplinas </h1>
       </div>
       <div>
-        <button (click)="cadastro=1" id="novo">Nova</button>
+        <button (click)="cadastro=1" type="button" class="btn btn-outline-warning">Nova</button>
       </div>
     </div>
     <hr>
-        <table>
+        <table class="table">
+            <thead class="thead-dark">
             <tr>
                 <th>Código</th> 
                 <th>Nome</th>
                 <th>Detalhes</th>
               </tr>
+            
             <tr *ngFor="let disciplina of disciplinas"> 
                 <td >{{disciplina.codigo}}</td>
                 <td>{{disciplina.nome}}</td> 
-                <td><button class="btn btn-primary"(click)="editor(disciplina)">Editar</button>   <button class="btn btn-danger" (click)="excluir(disciplina)">Excluir</button></td>
+                <td><button class="btn btn-outline-primary"(click)="editor(disciplina)">Editar</button>   <button class="btn btn-outline-danger" (click)="excluir(disciplina)"><i class="fas fa-trash-alt"></i>Excluir</button></td>
               </tr>
+            </thead>
         </table>
          
         <div *ngIf= "cadastro != null">
         <form #cadastro="ngForm" (submit)="salvar()"  >
           <div>
               <label for="codigo">Codigo</label><br>
-              <input type="number" id="codigo" name="codigo" [(ngModel)]="codigo" required>
+              <input type="number" id="codigo" name="codigo" [(ngModel)]="codigo" class="form-control" required>
           </div>
           <div>
               <label for="nome">Nome</label><br>
-              <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
+              <input type="text" id="nome" name="nome" [(ngModel)]="nome"  class="form-control"required>
           </div>
           <div>
               <label><input type="radio" name="tipo" [(ngModel)]="tipo" value="primario">Primário</label>
@@ -57,14 +60,14 @@
               </div>
           <div>
               <label for="descricao">Descrição</label><br>
-              <textarea id="descricao" name="descricao" [(ngModel)]="descricao"cols="70" rows="5"></textarea>
+              <textarea id="descricao" name="descricao" [(ngModel)]="descricao"cols="70" rows="5" class="form-control"></textarea>
           </div>
           <div class="form-group">
             <label for="data">Data</label><br>
             <input type="Date" id="data" name="data" class="form-control" [(ngModel)]="data" required>
             </div>
-          <button type="reset" class="btn btn-warning"(click)="cancelar()">Cancelar</button>
-          <button type="submit" class="btn btn-success" [disabled]="!cadastro.valid" >Salvar</button>
+          <button type="reset" class="btn btn-outline-danger"  (click)="cancelar()">Cancelar</button>
+          <button type="submit" class="btn btn-outline-success" [disabled]="!cadastro.valid" >Salvar</button>
           
         </form>
       </div>

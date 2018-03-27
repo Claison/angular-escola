@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Disciplina} from './disciplina.model';
-import {Professor} from './professor.model';
+
 
 @Component({
   selector: 'app-root',
@@ -69,7 +69,7 @@ export class AppComponent {
     this.codigo=null;
     this.nome = null;
     this.descricao = null;
-    this.periodo="";
+    this.periodo= "";
     this.ativa=false;
     
   }
