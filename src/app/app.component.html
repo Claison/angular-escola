@@ -4,7 +4,7 @@
         <h1>Disciplinas </h1>
       </div>
       <div>
-        <button (click)="cadastro=1" type="button" class="btn btn-outline-warning">Nova</button>
+        <button (click)="cadastro=1" type="button" class="btn btn-outline-warning"><i class="fa fa-plus"></i>  Nova</button>
       </div>
     </div>
     <hr>
@@ -19,7 +19,7 @@
             <tr *ngFor="let disciplina of disciplinas"> 
                 <td >{{disciplina.codigo}}</td>
                 <td>{{disciplina.nome}}</td> 
-                <td><button class="btn btn-outline-primary"(click)="editor(disciplina)">Editar</button>   <button class="btn btn-outline-danger" (click)="excluir(disciplina)"><i class="fas fa-trash-alt"></i>Excluir</button></td>
+                <td><button class="btn btn-outline-primary"(click)="editor(disciplina)"><i class="fa fa-pencil-square"></i>  Editar</button>   <button class="btn btn-outline-danger" (click)="excluir(disciplina)"><i class="fa fa-trash"></i>  Excluir</button></td>
               </tr>
             </thead>
         </table>
@@ -66,13 +66,12 @@
             <label for="data">Data</label><br>
             <input type="Date" id="data" name="data" class="form-control" [(ngModel)]="data" required>
             </div>
-          <button type="reset" class="btn btn-outline-danger"  (click)="cancelar()">Cancelar</button>
-          <button type="submit" class="btn btn-outline-success" [disabled]="!cadastro.valid" >Salvar</button>
+          <button type="reset" class="btn btn-outline-danger"  (click)="cancelar()"><i class="fa fa-ban"></i>  Cancelar</button>
+          <button type="submit" class="btn btn-outline-success" [disabled]="!cadastro.valid" ><i class="fa fa-save"></i>  Salvar</button>
           
         </form>
       </div>
-
   </div>
-  {{periodo}}
+  
 
   
