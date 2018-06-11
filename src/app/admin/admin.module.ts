@@ -17,6 +17,7 @@ import {TurmaComponent} from './turma/turma.component';
 import {DisciplinasService} from './disciplinas.service';
 import {TurmasService} from './turmas.service';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
     ListaDeDisciplinasComponent,
     ListaDeTurmasComponent,
     TurmaComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    SobreComponent
   ],
   providers: [
     DisciplinasService,

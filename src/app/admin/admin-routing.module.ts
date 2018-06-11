@@ -9,7 +9,7 @@ import {TurmaComponent} from './turma/turma.component';
 import {CadastroDeDisciplinaComponent} from './cadastro-de-disciplina/cadastro-de-disciplina.component';
 import {CadastroDeTurmaComponent} from './cadastro-de-turma/cadastro-de-turma.component';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada/pagina-nao-encontrada.component';
-
+import {SobreComponent} from './sobre/sobre.component';
 const routes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
@@ -20,6 +20,8 @@ const routes: Routes = [
       {path: 'cadastrar-turma', component: CadastroDeTurmaComponent},
       {path: 'turmas', component: ListaDeTurmasComponent},
       {path: 'turmas/:id', component: TurmaComponent},
+      {path: 'sobre', component: SobreComponent},
+      {path: 'home', component: HomeComponent},
       {path: '', component: HomeComponent},
       {path: '**', component: PaginaNaoEncontradaComponent}
   ]}
