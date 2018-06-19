@@ -1,4 +1,4 @@
-<h1>Cadastro de Partidas</h1>
+<h1>Cadastro de Lances</h1>
 <hr>
 <div class="alert alert-success" *ngIf="cadastro_ok">
   <strong>Cadastro realizado com sucesso! </strong>
@@ -19,12 +19,10 @@
   <form #cadastro="ngForm" (submit)="salvar()">
     <div class="form-group">
       <label for="lances">Lances</label>
-      <select id="lances" name="lances" [(ngModel)]="lances" class="form-control" >
+      <select id="lances" name="lances" [(ngModel)]="lancej" class="form-control" >
         <option *ngFor="let l of lances" [value]="l.tipo">{{l.tipo}}</option>
       </select>
     </div>
-    <div class="form-group">
-      <p>Situação</p>
       <div class="form-check">
         <label class="form-check-label">
           <input class="form-check-input" type="radio" name="status" id="status1" value="primeiro tempo" [(ngModel)]="status" checked>
@@ -35,12 +33,18 @@
            2º tempo
         </label>
       </div>
-    <!--<div class="form-group">-->
-      <!--<label for="timeVisitante">Time Visitante</label>-->
-      <!--<select id="timeVisitante" name="timeVisitante" [(ngModel)]="timeVisitante" class="form-control" >-->
-        <!--<option *ngFor="let tv of Tvisitantes" [value]="tv.id">{{tv.nome}}</option>-->
-      <!--</select>-->
-    <!--</div>-->
+    <div class="form-group">
+      <label>hora</label>
+      <input type="number" width="10" name="hora" id="hora"[(ngModel)]="horaj" >
+      <label>minuto</label>
+      <input type="number" width="10" name="minuto" id="minuto"[(ngModel)]="minutoj" >
+    </div>
+    <div class="form-group">
+      <label for="jogadores">Jogador</label>
+      <select id="jogadores" name="jogadores" [(ngModel)]="jogador" class="form-control" >
+        <option *ngFor="let j of jogadores" [value]="j.id">{{j.nome}}</option>
+      </select>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid">Salvar</button>
   </form>
 </div>

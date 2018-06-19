@@ -10,8 +10,6 @@ import {ActivatedRoute} from "@angular/router";
 export class CadastroPartidaComponent implements OnInit {
     cadastro_ok = false;
     cadastro_erro = false;
-    atualizar_ok = false;
-    atualizar_erro = false;
     timeVisitante=null;
     timeMandante=null;
     hora=null;
@@ -20,13 +18,10 @@ export class CadastroPartidaComponent implements OnInit {
     Tmandantes=[];
     Tvisitantes=[];
 
-  constructor(private partidaService: PartidaService, private route: ActivatedRoute) {
-
-  }
+  constructor(private partidaService: PartidaService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-      this.atualizarLista1()
-      this.atualizarLista2()
+      this.atualizarLista()
       this.id = parseInt(this.route.snapshot.paramMap.get('id'));
       if (this.id) {
           this.partidaService.getPartida(this.id)
@@ -54,14 +49,13 @@ export class CadastroPartidaComponent implements OnInit {
                         this.cadastro_erro = true;
                     });
         }
-    atualizarLista1() {
+    atualizarLista() {
         this.partidaService.getMandantes()
             .subscribe(mandante => this.Tmandantes = mandante);
-    }
-
-    atualizarLista2() {
         this.partidaService.getVisitantes()
             .subscribe(visitante => this.Tvisitantes = visitante);
     }
+
+
 }
 

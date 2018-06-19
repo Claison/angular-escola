@@ -14,11 +14,16 @@ export class PartidaService {
         const partida = {data:data, hora:hora, timeVisitante:timeVisitante, timeMandante:timeMandante };
         return this.http.post(this.API_URL + '/partidas', partida);
     }
-    getPartidas(id?: number) {
-        return this.http.get(this.API_URL + '/partidas');
+    addLance(lancej: string,  status: string, horaj: string, minutoj: string, jogador: string): Observable<any> {
+        const lan = {lancej:lancej, status:status, horaj:horaj, minutoj:minutoj, jogador:jogador  };
+        return this.http.post(this.API_URL + '/lances', lan);
     }
+
     getPartida(id: number): Observable<any> {
         return this.http.get(this.API_URL + '/partidas/' + id );
+    }
+    getLance(id: number): Observable<any[]> {
+        return this.http.get<any[]>(this.API_URL + '/lances/'+ id );
     }
     getMandantes(): Observable<any[]> {
         return this.http.get<any[]>(this.API_URL + '/timeMandantes');
@@ -26,7 +31,11 @@ export class PartidaService {
     getVisitantes(): Observable<any[]> {
         return this.http.get<any[]>(this.API_URL + '/timeVisitantes');
     }
-    getLances(): Observable<any[]> {
-        return this.http.get<any[]>(this.API_URL + '/lances');
+    getTLances(): Observable<any[]> {
+        return this.http.get<any[]>(this.API_URL + '/tipoLances');
     }
+    getJogadores(): Observable<any[]> {
+        return this.http.get<any[]>(this.API_URL + '/jogadores');
+    }
+
 }

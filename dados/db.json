@@ -1,0 +1,142 @@
+{
+  "jogadores": [
+    {
+      "id": 1,
+      "time": 1,
+      "numero": "12",
+      "nome": "claison",
+      "posicao": null,
+      "atuacao": "titular"
+    },
+    {
+      "id": 2,
+      "time": 1,
+      "numero": "13",
+      "nome": "jorge",
+      "posicao": "Atacante",
+      "atuacao": "titular"
+    },
+    {
+      "id": 3,
+      "time": 1,
+      "numero": "1",
+      "nome": "cesar",
+      "posicao": null,
+      "atuacao": "reserva"
+    },
+    {
+      "id": 4,
+      "time": 1,
+      "numero": "3",
+      "nome": "laura",
+      "posicao": null,
+      "atuacao": "reserva"
+    },
+    {
+      "id": 5,
+      "time": 2,
+      "numero": "13",
+      "nome": "dionnys",
+      "posicao": null,
+      "atuacao": "titular"
+    },
+    {
+      "id": 6,
+      "time": 2,
+      "numero": "5",
+      "nome": "pedro",
+      "posicao": null,
+      "atuacao": "titular"
+    },
+    {
+      "id": 7,
+      "time": 2,
+      "numero": "7",
+      "nome": "alquimar",
+      "posicao": null,
+      "atuacao": "reserva"
+    },
+    {
+      "id": 8,
+      "time": 2,
+      "numero": "9",
+      "nome": "patricia",
+      "posicao": null,
+      "atuacao": "reserva"
+    }
+  ],
+  "timeVisitantes": [
+    {
+      "id": 1,
+      "nome": "palmeiras",
+      "tecnico": "Claison",
+      "jogadores": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "timeMandantes": [
+    {
+      "id": 2,
+      "nome": "santos",
+      "tecnico": "heitor",
+      "jogadores": [
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "partidas": [
+    {
+      "data": "teste",
+      "hora": "teste",
+      "timeVisitante": 1,
+      "timeMandante": 2,
+      "id": 1
+    },
+    {
+      "data": "12",
+      "hora": "21",
+      "timeVisitante": "2",
+      "timeMandante": "1",
+      "id": 2
+    }
+  ],
+  "tipoLances": [
+    {
+      "id": 1,
+      "tipo": "Passe certo"
+    },
+    {
+      "id": 2,
+      "tipo": "Passe errado"
+    },
+    {
+      "id": 3,
+      "tipo": "Drible"
+    },
+    {
+      "id": 4,
+      "tipo": "Lançamento"
+    },
+    {
+      "id": 5,
+      "tipo": "Falta recebida"
+    }
+  ],
+  "lances": [
+    {
+      "lancej": "Drible",
+      "status": "primeiro tempo",
+      "horaj": 12,
+      "minutoj": 45,
+      "jogador": "5",
+      "id": 1
+    }
+  ]
+}
