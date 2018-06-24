@@ -16,7 +16,7 @@ partida;
       this.atualizarLista();
       const id = parseInt(this.route.snapshot.paramMap.get('id'));
       this.partidaService.getPartida(id)
-          .subscribe(partidas => this.partida = partidas);
+          .subscribe(partida => this.partida = partida);
   }
     atualizarLista() {
         this.partidaService.getLances()

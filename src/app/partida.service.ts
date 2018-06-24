@@ -22,9 +22,6 @@ export class PartidaService {
     getPartida(id: number): Observable<any> {
         return this.http.get(this.API_URL + '/partidas/' + id );
     }
-    getLance(id: number): Observable<any[]> {
-        return this.http.get<any[]>(this.API_URL + '/lances/'+ id );
-    }
     getLances(): Observable<any[]> {
         return this.http.get<any[]>(this.API_URL + '/lances');
     }

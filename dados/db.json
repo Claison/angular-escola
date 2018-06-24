@@ -103,6 +103,13 @@
       "timeVisitante": 2,
       "timeMandante": 1,
       "id": 2
+    },
+    {
+      "data": "2018-06-20",
+      "hora": "22:30",
+      "timeVisitante": "1",
+      "timeMandante": "2",
+      "id": 3
     }
   ],
   "tipoLances": [

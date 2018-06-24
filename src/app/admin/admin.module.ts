@@ -9,6 +9,7 @@ import { CadastroLanceComponent } from './cadastro-lance/cadastro-lance.componen
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ConsultarPartidasComponent} from './consultar-partidas/consultar-partidas.component';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     declarations: [
         AdminComponent,
         CadastroPartidaComponent,
-        CadastroLanceComponent
+        CadastroLanceComponent,
+        ConsultarPartidasComponent
     ],
     providers: [PartidaService]
 })
