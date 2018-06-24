@@ -65,7 +65,7 @@
       "atuacao": "reserva"
     }
   ],
-  "timeVisitantes": [
+  "times": [
     {
       "id": 1,
       "nome": "palmeiras",
@@ -76,9 +76,7 @@
         3,
         4
       ]
-    }
-  ],
-  "timeMandantes": [
+    },
     {
       "id": 2,
       "nome": "santos",
@@ -102,8 +100,8 @@
     {
       "data": "12",
       "hora": "21",
-      "timeVisitante": "2",
-      "timeMandante": "1",
+      "timeVisitante": 2,
+      "timeMandante": 1,
       "id": 2
     }
   ],
@@ -133,8 +131,8 @@
     {
       "lancej": "Drible",
       "status": "primeiro tempo",
-      "horaj": 12,
-      "minutoj": 45,
+      "minutoj": 12,
+      "segundoj": 45,
       "jogador": "5",
       "id": 1
     }

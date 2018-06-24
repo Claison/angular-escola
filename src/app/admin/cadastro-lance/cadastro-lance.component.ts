@@ -13,7 +13,7 @@ export class CadastroLanceComponent implements OnInit {
     lancej=null;
     jogador=null;
     status=null;
-    horaj=null;
+    segundoj=null;
     minutoj=null;
     cadastro_ok = false;
     cadastro_erro = false;
@@ -36,15 +36,15 @@ export class CadastroLanceComponent implements OnInit {
       // }
   }
     salvar() {
-        this.partidaService.addLance(this.lancej, this.status, this.horaj, this.minutoj, this.jogador)
+        this.partidaService.addLance(this.lancej, this.status, this.minutoj, this.segundoj, this.jogador)
             .subscribe(lanceT => {
                     console.log(lanceT);
                     this.cadastro_ok = true;
                     this.cadastro_erro = false;
                     this.lancej = null;
                     this.status = null;
-                    this.horaj = null;
                     this.minutoj = null;
+                    this.segundoj = null;
                     this.jogador = null;
                 },
                 erro => {

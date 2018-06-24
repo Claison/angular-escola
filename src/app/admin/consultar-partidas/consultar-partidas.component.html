@@ -1,0 +1,46 @@
+<h1>Detalhe de Partida</h1>
+<hr>
+<div class="container">
+<table class="table table-bordered table-striped table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th>Data</th>
+    <th>Hora</th>
+    <th>Time Mandante</th>
+    <th>Time Visitante</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr >
+    <td>{{partida.data}}</td>
+    <td>{{partida.hora}}</td>
+    <td>{{partida.timeMandante}}</td>
+    <td>{{partida.timeVisitante}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<h1>Lista de Lances</h1>
+<hr>
+<div class="container">
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+      <th>Lance</th>
+      <th>status</th>
+      <th>Minuto</th>
+      <th>Segundos</th>
+      <th>Jogador</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let lance of lances" >
+      <td>{{lance.lancej}}</td>
+      <td>{{lance.status}}</td>
+      <td>{{lance.minutoj}}</td>
+      <td>{{lance.segundoj}}</td>
+      <td>{{lance.jogador}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

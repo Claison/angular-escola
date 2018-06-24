@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PartidaService} from "../../partida.service";
-import {ActivatedRoute} from "@angular/router";
+import {PartidaService} from '../../partida.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-partida',
@@ -15,8 +15,7 @@ export class CadastroPartidaComponent implements OnInit {
     hora=null;
     data=null;
     id = null;
-    Tmandantes=[];
-    Tvisitantes=[];
+    times= null;
 
   constructor(private partidaService: PartidaService, private route: ActivatedRoute) {}
 
@@ -50,11 +49,9 @@ export class CadastroPartidaComponent implements OnInit {
                     });
         }
     atualizarLista() {
-        this.partidaService.getMandantes()
-            .subscribe(mandante => this.Tmandantes = mandante);
-        this.partidaService.getVisitantes()
-            .subscribe(visitante => this.Tvisitantes = visitante);
-    }
+        this.partidaService.getTimes()
+            .subscribe(times => this.times = times);
+        }
 
 
 }
